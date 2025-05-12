@@ -26,7 +26,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 20px;
+  padding: 10px;
   gap: 10px;
   font-family: "Poppins", sans-serif;
   font-weight: 700;
@@ -40,34 +40,38 @@ body {
 }
 
 .btn,
-.input-box {
+.city {
   height: 30px;
   border-radius: 5px;
   border: none;
   background-color: #dcf4fe;
-  /* padding: px; */
 }
-.input-box {
+.city {
   outline-color: #4fc3f7;
   padding: 5px;
+  width: 100%;
 }
 .btn {
-  width: 40px;
+  width: 50px;
+  cursor: pointer;
 }
 .btn:hover {
   background-color: #c3e9fa;
 }
 .Temperature {
-  font-size: 60px;
-  color: white;
   display: flex;
   justify-content: center;
   align-items: center;
+}
+.Temperature-num {
+  font-size: 60px;
+  color: white;
+  display: flex;
   gap: 15px;
   padding: 40px;
 }
-.sun {
-  height: 55px;
+.weather-icon {
+  height: 80px;
 }
 .info {
   display: flex;
