@@ -1,0 +1,98 @@
+html {
+  box-sizing: border-box;
+}
+*,
+::after,
+::before {
+  box-sizing: inherit;
+  margin: 0px;
+}
+body {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-image: url("img/vivid-blurred-colorful-wallpaper-background.jpg");
+}
+.container {
+  width: 350px;
+  height: 400px;
+}
+.input {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  gap: 10px;
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+.location-icon {
+  color: white;
+}
+.input:focus {
+  outline: none;
+}
+
+.btn,
+.input-box {
+  height: 30px;
+  border-radius: 5px;
+  border: none;
+  background-color: #dcf4fe;
+  /* padding: px; */
+}
+.input-box {
+  outline-color: #4fc3f7;
+  padding: 5px;
+}
+.btn {
+  width: 40px;
+}
+.btn:hover {
+  background-color: #c3e9fa;
+}
+.Temperature {
+  font-size: 60px;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  padding: 40px;
+}
+.sun {
+  height: 55px;
+}
+.info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+}
+#WInfo {
+  color: rgb(190, 190, 190);
+}
+.weather,
+.today,
+.humidity {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 20px;
+}
+.weather-condition,
+.max-min-temp,
+.avg-humidity {
+  color: white;
+  font-weight: 500;
+  font-size: larger;
+}
+.WInfo {
+}
