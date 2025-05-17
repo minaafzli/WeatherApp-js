@@ -22,6 +22,7 @@ body {
   width: 900px;
   height: 650px;
   display: flex;
+  justify-content: space-around;
   flex-direction: column;
   align-items: center;
 }
@@ -59,6 +60,7 @@ body {
 .total-info {
   display: flex;
   gap: 4vw;
+  margin-top: 50px;
 }
 .location-icon {
   color: white;
@@ -93,9 +95,7 @@ body {
   display: flex;
   flex-direction: column;
 }
-.total-info {
-  margin-top: 100px;
-}
+
 .Temperature {
   display: inline-flex;
 
@@ -140,7 +140,6 @@ body {
 .row-1,
 .row-2 {
   width: 450px;
-
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -191,6 +190,9 @@ body {
 .hourly-icon {
   width: 80px;
 }
+#max-icon {
+  width: 15px;
+}
 
 .info-icon {
   width: 20px;
@@ -199,4 +201,313 @@ body {
 #sunrise-icon,
 #wind-icon {
   width: 35px;
+}
+
+@media (max-width: 479px) {
+  body {
+    height: 700px;
+  }
+  .container {
+    height: 650px;
+  }
+  .header {
+    width: 450px;
+    flex-direction: column-reverse;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+  }
+  .name {
+    width: 300px;
+    font-size: 30px;
+  }
+  .location {
+    width: 200px;
+    display: flex;
+    flex-direction: column;
+  }
+  .location-icon {
+    width: 30px;
+  }
+  .input {
+    gap: 5px;
+  }
+  .date-box {
+    flex-direction: column;
+
+    gap: 0;
+  }
+  .date,
+  .time {
+    font-size: 13px;
+  }
+  .input-city-name {
+    width: 130px;
+  }
+  .total-info {
+    flex-direction: column;
+    margin-top: 10px;
+  }
+
+  .info {
+    gap: 4vw;
+  }
+  .row-1,
+  .row-2 {
+    width: 270px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .hourly-icon {
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+  .wind-speed,
+  .min,
+  .humidity,
+  .sunrise,
+  .sunset,
+  .max {
+    width: 15vw;
+  }
+  .speed,
+  .min-temp,
+  .avg-humidity,
+  .sunrise-num,
+  .sunset-num,
+  .max-temp {
+    color: white;
+    font-weight: 400;
+    font-size: medium;
+  }
+  .WInfo {
+    font-size: 12px;
+    text-align: center;
+  }
+  .weather-icon {
+    height: 20vb;
+  }
+
+  .Temperature-num {
+    font-size: 45px;
+  }
+  .hourly-item {
+    width: 65px;
+  }
+  .hourly-icon {
+    width: 50px;
+  }
+  .total-info {
+    gap: 2vw;
+  }
+  .hourly-item {
+    margin: 20px 0 0 0;
+  }
+  .hourly-forecast {
+  }
+  .Temperature::after {
+    right: -15px;
+    width: 300px;
+    height: 3px;
+    top: 135px;
+  }
+}
+
+@media (min-width: 479px) and (max-width: 575px) {
+  body {
+    height: 700px;
+  }
+  .container {
+    height: 600px;
+  }
+  .header {
+    width: 450px;
+  }
+  .name {
+    width: 300px;
+    font-size: 30px;
+  }
+  .location {
+    width: 200px;
+  }
+  .location-icon {
+    width: 30px;
+  }
+  .input {
+    gap: 5px;
+  }
+  .date-box {
+    flex-direction: column;
+    gap: 0;
+  }
+  .date,
+  .time {
+    font-size: 13px;
+  }
+  .input-city-name {
+    width: 130px;
+  }
+  .total-info {
+    flex-direction: column;
+    margin-top: 10px;
+  }
+
+  .info {
+    gap: 4vw;
+  }
+  .row-1,
+  .row-2 {
+    width: 300px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .hourly-icon {
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+  .wind-speed,
+  .min,
+  .humidity,
+  .sunrise,
+  .sunset,
+  .max {
+    width: 15vw;
+  }
+  .speed,
+  .min-temp,
+  .avg-humidity,
+  .sunrise-num,
+  .sunset-num,
+  .max-temp {
+    color: white;
+    font-weight: 400;
+    font-size: medium;
+  }
+  .WInfo {
+    font-size: 12px;
+  }
+  .weather-icon {
+    height: 20vb;
+  }
+
+  .Temperature-num {
+    font-size: 45px;
+  }
+  .hourly-item {
+    width: 65px;
+  }
+  .hourly-icon {
+    width: 65px;
+  }
+  .total-info {
+    gap: 2vw;
+  }
+  .hourly-item {
+    margin: 20px 0 0 0;
+  }
+  .hourly-forecast {
+  }
+  .Temperature::after {
+    right: 0px;
+    width: 300px;
+    height: 3px;
+    top: 135px;
+  }
+}
+
+@media (min-width: 575px) and (max-width: 767px) {
+  .header {
+    width: 550px;
+  }
+  .name {
+    width: 300px;
+    font-size: 32px;
+  }
+  .input-city-name {
+    width: 130px;
+  }
+  .info {
+    gap: 4vw;
+  }
+  .row-1,
+  .row-2 {
+    width: 300px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .hourly-icon {
+  }
+  .wind-speed,
+  .min,
+  .humidity,
+  .sunrise,
+  .sunset,
+  .max {
+    width: 15vw;
+  }
+  .speed,
+  .min-temp,
+  .avg-humidity,
+  .sunrise-num,
+  .sunset-num,
+  .max-temp {
+    color: white;
+    font-weight: 400;
+    font-size: medium;
+  }
+  .WInfo {
+    font-size: 12px;
+  }
+  .weather-icon {
+    height: 20vb;
+  }
+
+  .Temperature-num {
+    font-size: 45px;
+  }
+  .hourly-item {
+    width: 65px;
+  }
+  .hourly-icon {
+    width: 65px;
+  }
+  .total-info {
+    gap: 2vw;
+  }
+  .hourly-item {
+    margin: 20px 0 0 0;
+  }
+  .Temperature::after {
+    right: 0px;
+  }
+}
+
+@media (min-width: 767px) and (max-width: 991px) {
+  .header {
+    width: 700px;
+  }
+
+  .info {
+    gap: 4vw;
+  }
+  .wind-speed,
+  .min,
+  .humidity,
+  .sunrise,
+  .sunset,
+  .max {
+    width: 15vw;
+  }
+  .weather-icon {
+    height: 25vb;
+  }
+  .total-info {
+    gap: 2vw;
+  }
+  .Temperature::after {
+    right: -8px;
+  }
 }

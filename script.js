@@ -31,7 +31,6 @@ function getWeather() {
     });
 }
 
-// نمایش تاریخ و ساعت زنده
 function displayTime() {
   const now = new Date();
   const dayOfWeek = now.toLocaleString("en-US", { weekday: "long" });
@@ -47,10 +46,8 @@ function displayTime() {
   ).textContent = `${hours}:${minutes}:${seconds}`;
 }
 
-// تابع ساعت زنده (به‌روزرسانی هر ثانیه)
 setInterval(displayTime, 1000);
 
-// نمایش اطلاعات هواشناسی
 function display_weather(data) {
   const name = document.querySelector(".name");
   name.textContent = `${data.name}, ${data.sys.country}`;
@@ -90,7 +87,6 @@ function display_weather(data) {
   sunset_num.textContent = transform_time(data.sys.sunset);
 }
 
-// نمایش پیش‌بینی ساعتی
 function displayHourlyforecast(hourlyData) {
   const hourlyforecastDiv = document.querySelector(".hourly-forecast");
   hourlyforecastDiv.innerHTML = "";
@@ -113,7 +109,6 @@ function displayHourlyforecast(hourlyData) {
   });
 }
 
-// اتصال رویداد به دکمه و ورودی
 const btn = document.querySelector(".btn");
 btn.addEventListener("click", getWeather);
 document
@@ -124,5 +119,4 @@ document
     }
   });
 
-// نمایش تاریخ و ساعت پیش‌فرض هنگام بارگذاری
 displayTime();
