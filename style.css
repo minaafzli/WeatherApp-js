@@ -184,5 +184,14 @@ body {
   color: white;
 }
 .hourly-icon {
-  width: 100px;
+  width: 80px;
+}
+
+.info-icon {
+  width: 20px;
+  color: white;
+}
+#sunrise-icon,
+#wind-icon {
+  width: 35px;
 }
