@@ -14,29 +14,72 @@
   </head>
   <body>
     <div class="container">
-      <div class="input">
-        <img src="img/location.svg" alt="location-icon" class="location-icon" />
-        <input type="text" placeholder="Enter city name" class="city" />
-        <button onclick="getWeather()" class="btn">search</button>
-      </div>
-      <div class="Temperature">
-        <img src="" alt="weather-icon" class="weather-icon" />
-        <p class="Temperature-num">--°</p>
-      </div>
-      <div class="info">
-        <div class="weather">
-          <p id="WInfo">Weather</p>
-          <div class="weather-condition"></div>
+      <div class="header">
+        <div class="location">
+          <p class="name">Tehran-IR</p>
+          <p class="date">Monday 27 August</p>
         </div>
-        <div class="today">
-          <p id="WInfo">Today</p>
-          <div class="max-min-temp">32/25 °C</div>
-        </div>
-        <div class="humidity">
-          <p id="WInfo">Humidity</p>
-          <div class="avg-humidity">25%</div>
+        <div class="input">
+          <img
+            src="img/location.svg"
+            alt="location-icon"
+            class="location-icon"
+          />
+          <input
+            type="text"
+            placeholder="Enter city name"
+            class="input-city-name"
+          />
+
+          <button class="btn">search</button>
         </div>
       </div>
+      <div class="total-info">
+        <div class="Temperature">
+          <img
+            src="https://openweathermap.org/img/wn/02d@4x.png"
+            alt="weather-icon"
+            class="weather-icon"
+          />
+          <div class="box">
+            <p class="Temperature-num">21°</p>
+            <div class="weather">
+              <div class="weather-condition">few clouds</div>
+            </div>
+          </div>
+        </div>
+        <div class="info">
+          <div class="row-1">
+            <div class="wind-speed">
+              <p class="WInfo">Wind speed</p>
+              <div class="speed">25</div>
+            </div>
+            <div class="max">
+              <p class="WInfo">High</p>
+              <div class="max-temp">32°C</div>
+            </div>
+            <div class="sunrise">
+              <p class="WInfo">Sunrise</p>
+              <div class="sunrise-num">6:00</div>
+            </div>
+          </div>
+          <div class="row-2">
+            <div class="humidity">
+              <p class="WInfo">Humidity</p>
+              <div class="avg-humidity">25%</div>
+            </div>
+            <div class="min">
+              <p class="WInfo">Low</p>
+              <div class="min-temp">25°C</div>
+            </div>
+            <div class="sunset">
+              <p class="WInfo">Sunset</p>
+              <div class="sunset-num">9:00</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="hourly-forecast"></div>
     </div>
     <script type="text/javascript" src="script.js"></script>
   </body>
