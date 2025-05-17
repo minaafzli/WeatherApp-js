@@ -38,7 +38,12 @@ body {
   width: 400px;
   font-size: 40px;
 }
-.date {
+.date-box {
+  display: flex;
+  gap: 20px;
+}
+.date,
+.time {
   color: white;
   font-size: 15px;
 }

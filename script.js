@@ -1,4 +1,4 @@
-"use strict;";
+"use strict";
 function getWeather() {
   const apiKey = "df0a0e9553dccb8386910b9cb58deba8";
   const city = document.querySelector(".input-city-name").value;
@@ -31,11 +31,30 @@ function getWeather() {
     });
 }
 
+// نمایش تاریخ و ساعت زنده
+function displayTime() {
+  const now = new Date();
+  const dayOfWeek = now.toLocaleString("en-US", { weekday: "long" });
+  const month = now.toLocaleString("en-US", { month: "long" });
+  const day = now.getDate();
+  const hours = now.getHours().toString().padStart(2, "0");
+  const minutes = now.getMinutes().toString().padStart(2, "0");
+  const seconds = now.getSeconds().toString().padStart(2, "0");
+
+  document.querySelector(".date").textContent = `${dayOfWeek}, ${month} ${day}`;
+  document.querySelector(
+    ".time"
+  ).textContent = `${hours}:${minutes}:${seconds}`;
+}
+
+// تابع ساعت زنده (به‌روزرسانی هر ثانیه)
+setInterval(displayTime, 1000);
+
+// نمایش اطلاعات هواشناسی
 function display_weather(data) {
-  // name
   const name = document.querySelector(".name");
-  name.textContent = `${data.name} ,${data.sys.country}`;
-  // low and high temperature
+  name.textContent = `${data.name}, ${data.sys.country}`;
+
   const low = document.querySelector(".min-temp");
   const high = document.querySelector(".max-temp");
   const temp_max = Math.round(data.main.temp_max - 273.15);
@@ -43,7 +62,6 @@ function display_weather(data) {
   low.textContent = `${temp_min}°C`;
   high.textContent = `${temp_max}°C`;
 
-  // temperature degree and icon
   const weather_icon = document.querySelector(".weather-icon");
   const temperature = document.querySelector(".Temperature-num");
   const temperature_num = Math.round(data.main.temp - 273.15);
@@ -51,48 +69,28 @@ function display_weather(data) {
   const icon_code = data.weather[0].icon;
   weather_icon.src = `https://openweathermap.org/img/wn/${icon_code}@4x.png`;
 
-  // humidity
   const humidity = document.querySelector(".avg-humidity");
-  const humidity_num = data.main.humidity;
-  humidity.textContent = `${humidity_num}%`;
+  humidity.textContent = `${data.main.humidity}%`;
 
-  // weather_description
   const weather_description = document.querySelector(".weather-condition");
   weather_description.textContent = data.weather[0].description;
-  console.log(data);
 
-  // windSpeed
   const windSpeed = document.querySelector(".speed");
-  windSpeed.textContent = data.wind.speed;
+  windSpeed.textContent = `${data.wind.speed} m/s`;
 
-  //sunrise and sunset
   const sunset_num = document.querySelector(".sunset-num");
   const sunrise_num = document.querySelector(".sunrise-num");
-  const sunset = data.sys.sunset;
-  const sunrise = data.sys.sunrise;
-
-  const transform_time = function (sun) {
+  const transform_time = (sun) => {
     const date = new Date(sun * 1000);
     const houre = date.getHours();
     const minutes = date.getMinutes().toString().padStart(2, "0");
     return `${houre}:${minutes}`;
   };
-  sunrise_num.textContent = transform_time(sunrise);
-  sunset_num.textContent = transform_time(sunset);
+  sunrise_num.textContent = transform_time(data.sys.sunrise);
+  sunset_num.textContent = transform_time(data.sys.sunset);
 }
 
-const btn = document.querySelector(".btn");
-btn.addEventListener("click", getWeather);
-document
-  .querySelector(".input-city-name")
-  .addEventListener("keydown", function (e) {
-    if (e.key === "Enter") {
-      console.log("entered");
-      getWeather();
-      console.log("clicke");
-    }
-  });
-
+// نمایش پیش‌بینی ساعتی
 function displayHourlyforecast(hourlyData) {
   const hourlyforecastDiv = document.querySelector(".hourly-forecast");
   hourlyforecastDiv.innerHTML = "";
@@ -103,14 +101,28 @@ function displayHourlyforecast(hourlyData) {
     const temperature = Math.round(item.main.temp - 273.15);
     const icon_code = item.weather[0].icon;
     const weather_icon = `https://openweathermap.org/img/wn/${icon_code}@4x.png`;
+
     const hourly_item = document.createElement("div");
     hourly_item.classList.add("hourly-item");
     hourly_item.innerHTML = `
-   
-          <span>${hour}:00</span>
-          <img src="${weather_icon}" alt="Hourly Weather Icon" class='hourly-icon'>
-          <span>${temperature}°C</span>
-        `;
+      <span>${hour}:00</span>
+      <img src="${weather_icon}" alt="Hourly Weather Icon" class='hourly-icon'>
+      <span>${temperature}°C</span>
+    `;
     hourlyforecastDiv.appendChild(hourly_item);
   });
 }
+
+// اتصال رویداد به دکمه و ورودی
+const btn = document.querySelector(".btn");
+btn.addEventListener("click", getWeather);
+document
+  .querySelector(".input-city-name")
+  .addEventListener("keydown", function (e) {
+    if (e.key === "Enter") {
+      getWeather();
+    }
+  });
+
+// نمایش تاریخ و ساعت پیش‌فرض هنگام بارگذاری
+displayTime();
