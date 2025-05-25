@@ -73,7 +73,7 @@ function display_weather(data) {
   weather_description.textContent = data.weather[0].description;
 
   const windSpeed = document.querySelector(".speed");
-  windSpeed.textContent = `${data.wind.speed} m/s`;
+  windSpeed.textContent = `${data.wind.speed}`;
 
   const sunset_num = document.querySelector(".sunset-num");
   const sunrise_num = document.querySelector(".sunrise-num");

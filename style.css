@@ -312,6 +312,10 @@ body {
     height: 3px;
     top: 135px;
   }
+  .hourly-forecast {
+    width: 90vw;
+    overflow-x: scroll;
+  }
 }
 
 @media (min-width: 479px) and (max-width: 575px) {
@@ -414,6 +418,10 @@ body {
     width: 300px;
     height: 3px;
     top: 135px;
+  }
+  .hourly-forecast {
+    width: 90vw;
+    overflow-x: scroll;
   }
 }
 
